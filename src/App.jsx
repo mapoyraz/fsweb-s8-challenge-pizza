@@ -1,19 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import workintech from '/workintech.svg'
+import Home from './pages/Home.jsx'
+import OrderPizza from './pages/OrderPizza.jsx'
+import Success from './pages/Success.jsx'
 import './App.css'
+import { Route, Switch } from 'react-router-dom'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      
-      <p className="read-the-docs">
-        Merhaba S8 Project Sayfasi!
-      </p>
-    </>
+    <Switch>
+      <Route path="/" exact>
+        <Home/>
+      </Route>
+      <Route path="/siparis">
+        <OrderPizza/>
+      </Route>
+      <Route path="/siparisonaylandi">
+        <Success/>
+      </Route>
+    </Switch>
   )
 }
 
-export default App
+export default App;
